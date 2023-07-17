@@ -1,0 +1,149 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Box from './homepagebox/box';
+import Main from './landingpage/main'
+import {FaShoppingCart} from 'react-icons/fa'
+import NewCollection from './landingpage/NewCollection';
+import Package from './Product/Package';
+import { useSelector } from 'react-redux';
+import NewProduct from './Product/newProduct';
+import {FiMonitor} from 'react-icons/fi'
+import {RiTShirt2Line} from 'react-icons/ri'
+import {GiLipstick} from 'react-icons/gi'
+import { AiOutlineStar} from 'react-icons/ai'
+//const {cetegory,cetloading} = useSelector(state => state.product)
+
+function Hero() {
+  const {cetegory,cetloading} = useSelector(state => state.product)
+
+   const changeimg= (amount) => {
+
+        console.log(amount)
+        const transform= document.getElementById('heroImage')
+        //console.log(transform)
+        transform.style.transform +="translate("+{amount}+",0px)"
+   
+   }
+    return ( 
+
+<div class="relative  overflow-hidden container mx-auto  mb-20 z-0 pt-14">
+  
+
+
+
+
+
+
+<section class="pt-4 md:pt-4 ">
+    <div class="grid bg-white max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <div class="mr-auto place-self-center lg:col-span-7">
+            <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl ">Happy :)      <br/> Shopping</h1>
+            <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl ">From checkout to global sales tax compliance, companies around the world use Flowbite to simplify their payment stack.</p>
+          <Link to='/cetegory/Watch'>
+          <button  class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-orange-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 ">
+                Get started
+                <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </button>
+          </Link>
+            <a href="#" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 ">
+                Speak to Sales
+            </a> 
+        </div>
+        <div class="hidden  overflow-hidden lg:mt-0 lg:col-span-5 lg:flex">
+         
+
+          <div  className="w-full flex justify-center">
+             <img clssName=' 'src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB-hpUV3dWeGLdi5wWwHJh4F-_F5nctwi4BnJypM9vBeqDWn95ba6oWTpy5dc5dGSb0aI&usqp=CAU" alt="mockup"/>
+           </div>
+        </div>                
+    </div>
+</section>
+                  
+            
+               
+                
+
+
+                  <div className="  flex items-center  max-w-screen-xl mx-auto bg-white pb-5 shadow border ">
+                    < Box/>
+                  </div>
+   
+
+<div className="flex flex-col max-w-screen-xl mx-auto   rounded  my-10 shadow ">
+      <div className=" bg-gray-50 flex justify-between font-medium text-gray-600  items-center border-b"> 
+            <p className='text-sm p-2'>New Product</p>
+            <button className='border-yellow-400 border text-orange-600 font-medium  p-2 text-[1rem] text-white hover:bg-yellow-500 hover:text-white'> See More</button>
+      </div>
+
+  <div className="flex overflow-x-auto w-[100%] py-2 ">
+ 
+     <NewProduct url='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0ODQ4NDg4QDQ0NDQ0NDg4NDQ8NDQ0NFREWFhURExUYHCggGBolGxMTITEhJSkrLi4uFx8zODMsNygtLisBCgoKDg0OGhAQGC8fFx0vLTAtNS0rKzcrKystLTMrLS0tKy0uLS0rLTItLy0rKysrKy0tLSsrLy0rKysrLSstN//AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAAAQQCAwUHBv/EAD8QAQACAQICBgUIBgsAAAAAAAABAgMEEQYhBRITMUFRMmFxkZIWIkJSgaHB0SMzYnKCsQcUFUNzk6KywuHw/8QAGQEBAQEBAQEAAAAAAAAAAAAAAAECAwQF/8QAIBEBAQACAQUAAwAAAAAAAAAAAAECAxESITFBURQiMv/aAAwDAQACEQMRAD8A9xAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABp1kzGO8x3xWQac/SWHHvFrc48I5qOXiPDHdW0+6HPy9lf0qzE+dZ/Bpt0dh9KM22/0bV5wl5YmzG+1+3Evlin7bf9MflFknux1j2zMqE9Hbd2XH8WzGdDaOfWpPsvCd2uqfXR/t/LP0aR9k/myjpnNP1Y/hcm2nvHfNfjiE1iY77V+Op3OY7EdKZp8Y+GG2vSOXzr8LjVy1jvtX44bI1uKO/JT4oDmO1XX5f2fdP5s41uTyr7p/Nxq9LaWPSzV9nWhs+Uehr3ZImfVtM/zVOqfXYjV5Pqx97L+uW+p7rOBfi3R1352tv4Rsp5OMsMejjtPtkTrx+vrY11fGLV+zeFil4tG8TvE+MPPM/FeS+8UpWu/jtvL6vhPNe+mm153mctvdtCmOcvh2gBsAAAAAAAAAAUdX0rgw8r3jePo1jrSrdPa/s6WiLdSIrve3l5Vj1y+P6O0ur18zbDEY8MTMdtk3+dMd+3mOOe2y9OM5r6fJxXp4nlS8/ZEIrxNhyb0jHfe0TWOtttzcz5EZJjnqo3/wAKdv8Ac124K1FZi1NTWZrO8RNLV5+8c7lv+NsX3335TvyhFrMMmKce0T6UcrfveJeRx7+2u9lbJZuySq5ZVitOe8z3zM+2d1LJZvyyqZZGa0ZZ/wDbq15htySr3lEYW2Yb802YDUZ9eWVZa2dEVd00c4ep8LY+ro8f7XWt97y/RxvMe1650Zi6mDFTypX37K9eie1oAegAAAAAAAARKUSDznjbV2vNMMTt2ubafXvbaPuff6DS0w4ceKkRWuOlaxEex5xxzjtjvXJt+qzRafZvvu9D6K11NRp8WakxNb0ieXPaduce8ebT/eXPlcRKQel8v09i6uS/7W14/Fzt+UPouIcG+OLx313ifZL5vHPIePbOM2vIq5VnIqZVcKqZZU8q3lVMozVa6tdvyNFkGqzFlLCRYmGyktMNlEWO9w/g7TPjptv1r1j73rURtyef8AaPrZpy7csdZn+KY2j8XoKvdqnGIAOoAAAAAAAAADh8TdDRqcczWN7xG0x9aPzef9G6zW9F5LVxfPw9b52HJ3R57eUvXFLX9F6fP+txxafrd1o+2Bw2aub1Y3ivnNJx5hmP0uDJSfHqxF4WvltovLL/AJbVquCsM88eW1PVaItDm6jgzUx6N6X/ANIxbvnyr2t4w0+Wk4qUvvkjq72iIiN/FQwzy597n5eG9bTn2Np25xNJiV3SUyViYy0tS3LeLRtM+scbdmV/eJyKmZbyKmZWKp5VPKuZlPKMKuRXtKxkaLwg1SwllLCRqDdijeYhpdrhno6dRqMdPo773nyp4o3hObw9G4P0PY6SszG1svz589vB3Wmm0RERyiIiIjyhnEq+hJwzGO6dxUiEgAAAAAAAAAAAAKvSOljNjmv0u+s+UrQF7vg9RjmJmJ5TEzE+1RzQ+r4g0PPtqxyn09vCfrPms9FfO249NczMqZV7NVRzDiqZGi8t2WVTLcRjezXNmF7NU2lG430tvL0zgfo/scHbWja+bnET3xj8Pe+C4b6P7fNHWj9HTabz6vCv2vTMGo7oiNoiNojyR7NGHHd2ouyi6hjzS31ur0rUXZRZXrZsrIN8SlrrLOAZCEgAAAAAAAAAAAAiY3c/U9C6fJzms1mfGs7OiCXGXy+b1HCWO3o5bV/erWzmajgnLPo6in8WO0fyl9uxmDlyujXfTzjNwLrPDNgn29pH4Kd+A9dP97g9+Sf+L1GYYTQT8fD48ur/AEf6mfSz44/dpaf5rem4BrXnkyWv6oiKw9F7M7MbmrGenzGi6CrhrFaR1a+UePt83Qx6HZ1+zTFBvhRx6bZuriWYqnqitMUZxVsiqdgYxDOCISAlCQAAAAAAAAAAAAAAAAQJAY7GzIBjsbMgGOydkgI2NkgI2EgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgBIgBIgBIgBIgBIgBIgBIgBIgBIgBIgBIgBIgBIgBIgASACJAEgAAAIkAAAAAAAAAAAAAAAAAAAAAf/9k='
+                 price='999'
+                 name='Chese Cake Cup'
+         />
+
+            <NewProduct url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIzwpsmNJyVpJ2khYkbSPrjTWHO9iBZebcuw&usqp=CAU'
+                 price='999'
+                 name='Smart Watch 440'
+         />
+            <NewProduct url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyYwnpCK3dNkY0k2uGPsCl8dQ3vCNgZFgtpg&usqp=CAU'
+                 price='999'
+                 name='Yellow baggy T shirt'
+         />
+            <NewProduct url='data:image/jpeg;base64,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'
+                 price='999'
+                 name='Chese Cake Cup'
+         />
+            <NewProduct url='data:image/jpeg;base64,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'
+                 price='999'
+                 name='Chese Cake Cup'
+         />
+            <NewProduct url='data:image/jpeg;base64,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'
+                 price='999'
+                 name='Chese Cake Cup'
+         />
+            <NewProduct url='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0ODQ4NDg4QDQ0NDQ0NDg4NDQ8NDQ0NFREWFhURExUYHCggGBolGxMTITEhJSkrLi4uFx8zODMsNygtLisBCgoKDg0OGhAQGC8fFx0vLTAtNS0rKzcrKystLTMrLS0tKy0uLS0rLTItLy0rKysrKy0tLSsrLy0rKysrLSstN//AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAAAQQCAwUHBv/EAD8QAQACAQICBgUIBgsAAAAAAAABAgMEEQYhBRITMUFRMmFxkZIWIkJSgaHB0SMzYnKCsQcUFUNzk6KywuHw/8QAGQEBAQEBAQEAAAAAAAAAAAAAAAECAwQF/8QAIBEBAQACAQUAAwAAAAAAAAAAAAECAxESITFBURQiMv/aAAwDAQACEQMRAD8A9xAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABp1kzGO8x3xWQac/SWHHvFrc48I5qOXiPDHdW0+6HPy9lf0qzE+dZ/Bpt0dh9KM22/0bV5wl5YmzG+1+3Evlin7bf9MflFknux1j2zMqE9Hbd2XH8WzGdDaOfWpPsvCd2uqfXR/t/LP0aR9k/myjpnNP1Y/hcm2nvHfNfjiE1iY77V+Op3OY7EdKZp8Y+GG2vSOXzr8LjVy1jvtX44bI1uKO/JT4oDmO1XX5f2fdP5s41uTyr7p/Nxq9LaWPSzV9nWhs+Uehr3ZImfVtM/zVOqfXYjV5Pqx97L+uW+p7rOBfi3R1352tv4Rsp5OMsMejjtPtkTrx+vrY11fGLV+zeFil4tG8TvE+MPPM/FeS+8UpWu/jtvL6vhPNe+mm153mctvdtCmOcvh2gBsAAAAAAAAAAUdX0rgw8r3jePo1jrSrdPa/s6WiLdSIrve3l5Vj1y+P6O0ur18zbDEY8MTMdtk3+dMd+3mOOe2y9OM5r6fJxXp4nlS8/ZEIrxNhyb0jHfe0TWOtttzcz5EZJjnqo3/wAKdv8Ac124K1FZi1NTWZrO8RNLV5+8c7lv+NsX3335TvyhFrMMmKce0T6UcrfveJeRx7+2u9lbJZuySq5ZVitOe8z3zM+2d1LJZvyyqZZGa0ZZ/wDbq15htySr3lEYW2Yb802YDUZ9eWVZa2dEVd00c4ep8LY+ro8f7XWt97y/RxvMe1650Zi6mDFTypX37K9eie1oAegAAAAAAAARKUSDznjbV2vNMMTt2ubafXvbaPuff6DS0w4ceKkRWuOlaxEex5xxzjtjvXJt+qzRafZvvu9D6K11NRp8WakxNb0ieXPaduce8ebT/eXPlcRKQel8v09i6uS/7W14/Fzt+UPouIcG+OLx313ifZL5vHPIePbOM2vIq5VnIqZVcKqZZU8q3lVMozVa6tdvyNFkGqzFlLCRYmGyktMNlEWO9w/g7TPjptv1r1j73rURtyef8AaPrZpy7csdZn+KY2j8XoKvdqnGIAOoAAAAAAAAADh8TdDRqcczWN7xG0x9aPzef9G6zW9F5LVxfPw9b52HJ3R57eUvXFLX9F6fP+txxafrd1o+2Bw2aub1Y3ivnNJx5hmP0uDJSfHqxF4WvltovLL/AJbVquCsM88eW1PVaItDm6jgzUx6N6X/ANIxbvnyr2t4w0+Wk4qUvvkjq72iIiN/FQwzy597n5eG9bTn2Np25xNJiV3SUyViYy0tS3LeLRtM+scbdmV/eJyKmZbyKmZWKp5VPKuZlPKMKuRXtKxkaLwg1SwllLCRqDdijeYhpdrhno6dRqMdPo773nyp4o3hObw9G4P0PY6SszG1svz589vB3Wmm0RERyiIiIjyhnEq+hJwzGO6dxUiEgAAAAAAAAAAAAKvSOljNjmv0u+s+UrQF7vg9RjmJmJ5TEzE+1RzQ+r4g0PPtqxyn09vCfrPms9FfO249NczMqZV7NVRzDiqZGi8t2WVTLcRjezXNmF7NU2lG430tvL0zgfo/scHbWja+bnET3xj8Pe+C4b6P7fNHWj9HTabz6vCv2vTMGo7oiNoiNojyR7NGHHd2ouyi6hjzS31ur0rUXZRZXrZsrIN8SlrrLOAZCEgAAAAAAAAAAAAiY3c/U9C6fJzms1mfGs7OiCXGXy+b1HCWO3o5bV/erWzmajgnLPo6in8WO0fyl9uxmDlyujXfTzjNwLrPDNgn29pH4Kd+A9dP97g9+Sf+L1GYYTQT8fD48ur/AEf6mfSz44/dpaf5rem4BrXnkyWv6oiKw9F7M7MbmrGenzGi6CrhrFaR1a+UePt83Qx6HZ1+zTFBvhRx6bZuriWYqnqitMUZxVsiqdgYxDOCISAlCQAAAAAAAAAAAAAAAAQJAY7GzIBjsbMgGOydkgI2NkgI2EgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgBIgBIgBIgBIgBIgBIgBIgBIgBIgBIgBIgBIgBIgBIgASACJAEgAAAIkAAAAAAAAAAAAAAAAAAAAAf/9k='
+                 price='999'
+                 name='Chese Cake Cup'
+         />
+            <NewProduct url='data:image/jpeg;base64,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'
+                 price='999'
+                 name='Chese Cake Cup'
+         />
+            <NewProduct url='data:image/jpeg;base64,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'
+                 price='999'
+                 name='Chese Cake Cup'
+         />
+     
+
+  </div>
+
+  
+ 
+</div>
+
+
+
+     <div className="flex flex-col md:my-2  md:flex-row justify-between  max-w-screen-xl mx-auto">
+      
+    
+
+
+
+<Package/>
+
+<Package/>
+<Package/>
+<Package/>
+
+</div>
+
+     </div>
+
+
+
+
+     );
+}
+
+export default Hero;
